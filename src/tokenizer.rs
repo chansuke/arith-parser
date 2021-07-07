@@ -1,9 +1,8 @@
 //! Toknizer reads one or more characters and translates into token.
 
+use crate::token::Token;
 use std::iter::Peekable;
 use std::str::Chars;
-use crate::{token::Token}
-
 
 /// Data structure for tokenizer.
 pub struct Tokenizer<'a> {
@@ -13,7 +12,7 @@ pub struct Tokenizer<'a> {
 impl<'a> Tokenizer<'a> {
     pub fn new(expr: &'a str) -> Self {
         Tokenizer {
-            expr: expr.chars().peekable();
+            expr: expr.chars().peekable(),
         }
     }
 }
@@ -47,7 +46,7 @@ impl<'a> Iterator for Tokenizer<'a> {
             Some('^') => Some(Token::Caret),
             Some('(') => Some(Token::LeftParen),
             Some(')') => Some(Token::RightParen),
-            None => Some(Token::EOF),
+            None => Some(Token::Eof),
             Some(_) => None,
         }
     }

@@ -5,6 +5,8 @@ authors = ["chansuke <chansuke@georepublic.de>"]
 edition = "2018"
 
 [dependencies]
+anyhow = "1.0.41"
+thiserror = "1.0.26"
 
 [[bin]]
 path = "src/main.rs"
